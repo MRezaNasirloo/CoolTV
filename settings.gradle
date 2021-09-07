@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "CoolTV"
 include ':app'
 include ':tv'
+include ':common:core'
