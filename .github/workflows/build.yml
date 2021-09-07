@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
       - uses: actions/cache@v2
         with:
           path: |
@@ -34,12 +37,14 @@ jobs:
         run: bash ./gradlew test
 
   apk:
-    needs: test
-    name: Build APks
+    name: Build APKs
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
       - uses: actions/cache@v2
         with:
