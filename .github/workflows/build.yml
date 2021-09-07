@@ -34,6 +34,7 @@ jobs:
         run: bash ./gradlew test
 
   apk:
+    needs: test
     name: Build APks
     runs-on: ubuntu-latest
 
