@@ -1,6 +1,6 @@
-package com.cooltv.core.task
+package com.tv.core.task
 
-import com.cooltv.core.BuildConfig
+import com.tv.core.BuildConfig
 import timber.log.Timber
 
 class LoggerTask : StartupTask {

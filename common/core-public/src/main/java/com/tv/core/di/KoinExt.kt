@@ -1,4 +1,4 @@
-package com.cooltv.core.di
+package com.tv.core.di
 
 import android.content.ComponentCallbacks
 import kotlin.LazyThreadSafetyMode.NONE

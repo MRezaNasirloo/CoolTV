@@ -1,4 +1,4 @@
-package com.cooltv.core.task
+package com.tv.core.task
 
 /**
  * An interface to run a task on application startup

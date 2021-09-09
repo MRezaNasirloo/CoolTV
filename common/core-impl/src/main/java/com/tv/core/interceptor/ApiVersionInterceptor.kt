@@ -1,4 +1,4 @@
-package com.cooltv.core.interceptor
+package com.tv.core.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

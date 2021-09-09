@@ -1,4 +1,4 @@
-package com.cooltv.core.di
+package com.tv.core.di
 
 import org.koin.core.module.Module
 

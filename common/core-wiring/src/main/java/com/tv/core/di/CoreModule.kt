@@ -1,9 +1,9 @@
-package com.cooltv.core.di
+package com.tv.core.di
 
-import com.cooltv.core.task.LoggerTask
-import com.cooltv.core.task.StartupTask
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.tv.core.task.LoggerTask
+import com.tv.core.task.StartupTask
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.dsl.bind
