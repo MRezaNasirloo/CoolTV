@@ -1,0 +1,29 @@
+ext {
+    sdk = [
+            compileSdk: 30,
+            targetSdk : 30,
+            minSdk    : 30,
+    ]
+
+    libs = [
+            'core'            : '1.6.0',
+            'compat'          : '1.3.1',
+            'compose'         : '1.0.2',
+            'material'        : '1.4.0',
+            'lifecycle'       : '2.3.1',
+            'navigation'      : '2.3.5',
+            'constraintlayout': '2.1.0',
+
+            'hilt'            : '2.38.1',
+            'moshi'           : '1.12.0',
+            'okhttp'          : '4.9.1',
+            'retrofit'        : '2.9.0',
+            'koin'            : '3.1.2',
+
+            'junit'           : '4.13.2',
+            'mockito'         : '3.2.0',
+            'mockitoInline'   : '3.12.0',
+            'testing'         : '1.1.1',
+
+    ]
+}

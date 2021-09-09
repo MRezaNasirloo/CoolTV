@@ -1,7 +1,4 @@
 buildscript {
-    ext {
-        compose_version = '1.0.2'
-    }
     repositories {
         google()
         mavenCentral()
@@ -13,6 +10,10 @@ buildscript {
 }
 plugins {
     id 'com.diffplug.spotless' version '5.15.0'
+}
+
+allprojects {
+    apply from: "${rootDir}/versions.gradle"
 }
 
 subprojects {
