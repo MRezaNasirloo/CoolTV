@@ -1,9 +1,9 @@
 package com.tv
 
 import android.app.Application
-import com.cooltv.core.di.CoreModuleProvider
-import com.cooltv.core.di.inject
-import com.cooltv.core.task.StartupTask
+import com.tv.core.di.CoreModuleProvider
+import com.tv.core.di.inject
+import com.tv.core.task.StartupTask
 import org.koin.core.context.startKoin
 
 class App : Application() {

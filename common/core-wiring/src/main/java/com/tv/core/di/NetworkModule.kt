@@ -1,9 +1,9 @@
-package com.cooltv.core.di
+package com.tv.core.di
 
-import com.cooltv.core.interceptor.ApiVersionInterceptor
-import com.cooltv.core.interceptor.AuthInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.tv.core.interceptor.ApiVersionInterceptor
+import com.tv.core.interceptor.AuthInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.dsl.bind
