@@ -22,7 +22,7 @@ subprojects {
         kotlin {
             target '**/*.kt'
             targetExclude("$buildDir/**/*.kt")
-            targetExclude('bin/**/*.kt')
+            targetExclude("**/build/**")
             ktlint("0.42.1").userData([android: "true"])
         }
     }
