@@ -1,4 +1,4 @@
-package com.tv.ui.theme
+package com.tv.telero.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
