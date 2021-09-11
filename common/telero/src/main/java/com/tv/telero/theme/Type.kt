@@ -1,4 +1,4 @@
-package com.tv.ui.theme
+package com.tv.telero.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

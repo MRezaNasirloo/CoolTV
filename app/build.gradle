@@ -44,7 +44,8 @@ android {
 }
 
 dependencies {
-    implementation project(':common:core-public')
+    implementation project(":common:telero")
+    implementation project(":common:core-public")
     implementation project(":common:core-wiring")
 
     implementation("androidx.core:core-ktx:$libs.core")
@@ -53,9 +54,8 @@ dependencies {
 
     implementation("androidx.compose.ui:ui:$libs.compose")
     implementation("androidx.compose.material:material:$libs.compose")
-    implementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$libs.lifcycle")
     implementation("androidx.activity:activity-compose:$libs.compat")
 
-    debugImplementation "androidx.compose.ui:ui-tooling:$libs.compose"
+    debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
+    debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
 }
