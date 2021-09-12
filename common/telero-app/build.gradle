@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk sdk.compileSdk
+    defaultConfig {
+        applicationId "com.tv.telero"
+        minSdk sdk.minSdk
+        targetSdk sdk.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion libs.compose
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    implementation project(":common:telero")
+
+    implementation("androidx.core:core-ktx:$libs.core")
+    implementation("androidx.appcompat:appcompat:$libs.compat")
+    implementation("com.google.android.material:material:$libs.material")
+
+    implementation("androidx.compose.ui:ui:$libs.compose")
+    implementation("androidx.compose.material:material:$libs.compose")
+    implementation("androidx.activity:activity-compose:$libs.compat")
+
+    debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
+    debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
+}
