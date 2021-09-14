@@ -19,7 +19,20 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        buildConfig = false
+        buildConfig = true
+    }
+
+    buildTypes {
+        def properties = new Properties()
+        properties.load(new FileInputStream(rootProject.file("local.properties")))
+        release {
+            buildConfigField "String", "API_KEY_TRAKT", properties['trakt.api.key.release']
+            buildConfigField "String", "API_KEY_TMDB", properties['tmdb.api.key.release']
+        }
+        debug {
+            buildConfigField "String", "API_KEY_TRAKT", properties['trakt.api.key.staging']
+            buildConfigField "String", "API_KEY_TMDB", properties['tmdb.api.key.staging']
+        }
     }
 }
 
