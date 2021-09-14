@@ -31,6 +31,7 @@ dependencies {
     api("com.jakewharton.timber:timber:5.0.1")
     api("io.insert-koin:koin-core:$libs.koin")
     api("io.insert-koin:koin-android:$libs.koin")
+    api("io.insert-koin:koin-androidx-compose:$libs.koin")
 
     testImplementation 'junit:junit:4.13.2'
 }
