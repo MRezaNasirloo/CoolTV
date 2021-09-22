@@ -16,7 +16,9 @@ internal val CoreModule = module {
 
     factory {
         OkHttpClient.Builder().apply {
-            getAll<Interceptor>().forEach { addInterceptor(it) }
+            getAll<Interceptor>()
+                .distinctBy { it::class }
+                .forEach { addInterceptor(it) }
         }.build()
     }
 

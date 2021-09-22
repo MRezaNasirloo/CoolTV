@@ -6,10 +6,6 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
@@ -18,18 +14,17 @@ import androidx.compose.ui.text.style.TextOverflow
 @Composable
 fun BottomTabs(modifier: Modifier = Modifier, tabs: List<Tab>) {
     BottomNavigation(modifier = modifier) {
-        var selectedItem by rememberSaveable { mutableStateOf(0) }
-        tabs.forEachIndexed { index, item ->
+        tabs.forEach { tab ->
             BottomNavigationItem(
                 icon = {
                     Icon(
-                        imageVector = ImageVector.vectorResource(id = item.icon),
-                        contentDescription = item.contentDescription
+                        imageVector = ImageVector.vectorResource(id = tab.icon),
+                        contentDescription = tab.title
                     )
                 },
-                label = { Text(item.title, maxLines = 1, overflow = TextOverflow.Ellipsis) },
-                selected = selectedItem == index,
-                onClick = { selectedItem = index }
+                label = { Text(tab.title, maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                selected = tab.selected(),
+                onClick = tab.click,
             )
         }
     }
@@ -37,6 +32,7 @@ fun BottomTabs(modifier: Modifier = Modifier, tabs: List<Tab>) {
 
 data class Tab(
     val title: String,
-    val contentDescription: String = title,
-    @DrawableRes val icon: Int
+    @DrawableRes val icon: Int,
+    val selected: () -> Boolean = { false },
+    val click: () -> Unit = {},
 )

@@ -80,9 +80,9 @@ fun PosterPreview() {
 @Composable
 fun PreviewBottomTabs() {
     val tabs = listOf(
-        Tab(title = "Home", icon = R.drawable.ic_home_24),
-        Tab(title = "Profile", icon = R.drawable.ic_person_24),
-        Tab(title = "Setting", icon = R.drawable.ic_settings_24),
+        Tab(title = "Home", icon = com.tv.telero.R.drawable.ic_home_24),
+        Tab(title = "Profile", icon = com.tv.telero.R.drawable.ic_person_24),
+        Tab(title = "Setting", icon = com.tv.telero.R.drawable.ic_settings_24),
     )
     CoolTvTheme {
         Surface(color = MaterialTheme.colors.background) {
