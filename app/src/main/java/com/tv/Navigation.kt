@@ -11,5 +11,6 @@ fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "Home") {
         composable("Home") { Text("Home") }
         composable("Profile") { Text("Profile") }
+        composable("Setting") { Text("Setting") }
     }
 }
