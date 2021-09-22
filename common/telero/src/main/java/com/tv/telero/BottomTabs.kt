@@ -12,7 +12,13 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
-fun BottomTabs(modifier: Modifier = Modifier, tabs: List<Tab>) {
+fun BottomTabs(
+    modifier: Modifier = Modifier,
+    tabs: List<Tab>,
+    selected: String?,
+    click: (String) -> Unit
+) {
+
     BottomNavigation(modifier = modifier) {
         tabs.forEach { tab ->
             BottomNavigationItem(
@@ -23,8 +29,8 @@ fun BottomTabs(modifier: Modifier = Modifier, tabs: List<Tab>) {
                     )
                 },
                 label = { Text(tab.title, maxLines = 1, overflow = TextOverflow.Ellipsis) },
-                selected = tab.selected(),
-                onClick = tab.click,
+                selected = tab.title == selected,
+                onClick = { click(tab.title) },
             )
         }
     }
@@ -33,6 +39,4 @@ fun BottomTabs(modifier: Modifier = Modifier, tabs: List<Tab>) {
 data class Tab(
     val title: String,
     @DrawableRes val icon: Int,
-    val selected: () -> Boolean = { false },
-    val click: () -> Unit = {},
 )
