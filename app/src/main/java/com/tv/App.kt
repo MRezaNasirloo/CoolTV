@@ -4,6 +4,7 @@ import android.app.Application
 import com.tv.core.di.CoreModuleProvider
 import com.tv.core.di.inject
 import com.tv.core.task.StartupTask
+import com.tv.trending.di.TrendingModuleProvider
 import org.koin.core.context.startKoin
 
 class App : Application() {
@@ -14,7 +15,10 @@ class App : Application() {
         super.onCreate()
 
         startKoin {
-            modules(CoreModuleProvider())
+            modules(
+                CoreModuleProvider() +
+                    TrendingModuleProvider()
+            )
         }
 
         tasks.forEach { tasks -> tasks() }

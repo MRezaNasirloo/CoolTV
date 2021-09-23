@@ -1,12 +1,12 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
 }
 
 android {
     compileSdk sdk.compileSdk
     defaultConfig {
-        applicationId "com.cooltv"
         minSdk sdk.minSdk
         targetSdk sdk.targetSdk
         versionCode 1
@@ -36,27 +36,15 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion libs.compose
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
     implementation project(":common:telero")
     implementation project(":common:core-public")
-    implementation project(":common:core-wiring")
-    implementation project(":feature:trending")
-
-    implementation("androidx.core:core-ktx:$libs.core")
-    implementation("androidx.appcompat:appcompat:$libs.compat")
-    implementation("com.google.android.material:material:$libs.material")
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha08"
+    implementation("io.coil-kt:coil-compose:1.3.2")
 
     implementation("androidx.compose.ui:ui:$libs.compose")
     implementation("androidx.compose.material:material:$libs.compose")
-    implementation("androidx.activity:activity-compose:$libs.compat")
 
     debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
     debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")

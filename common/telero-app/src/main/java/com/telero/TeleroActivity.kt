@@ -90,7 +90,7 @@ fun PreviewBottomTabs() {
                 modifier = Modifier.fillMaxHeight(),
                 contentAlignment = Alignment.BottomCenter,
             ) {
-                BottomTabs(modifier = Modifier.requiredHeight(56.dp), tabs)
+                BottomTabs(modifier = Modifier.requiredHeight(56.dp), tabs, "") {}
             }
         }
     }
