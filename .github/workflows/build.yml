@@ -13,12 +13,18 @@ jobs:
   test:
     name: Unit Tests
     runs-on: ubuntu-latest
+    env:
+      API_KEY_TMDB: ${{ secrets.API_KEY_TMDB }}
+      API_KEY_TRAKT: ${{ secrets.API_KEY_TRAKT }}
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Copy CI gradle.properties
-        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+        run: |
+          mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+          echo "API_KEY_TMDB=${API_KEY_TMDB}" >> ./gradle.properties
+          echo "API_KEY_TRAKT=${API_KEY_TRAKT}" >> ./gradle.properties
 
       - uses: actions/cache@v2
         with:
@@ -26,7 +32,7 @@ jobs:
             ~/.gradle/caches/modules-*
             ~/.gradle/caches/jars-*
             ~/.gradle/wrapper/*
-          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
 
       - name: setup java
         uses: actions/setup-java@v2
@@ -39,12 +45,18 @@ jobs:
   apk:
     name: Build APKs
     runs-on: ubuntu-latest
+    env:
+      API_KEY_TMDB: ${{ secrets.API_KEY_TMDB }}
+      API_KEY_TRAKT: ${{ secrets.API_KEY_TRAKT }}
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Copy CI gradle.properties
-        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+        run: |
+          mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+          echo "API_KEY_TMDB=${API_KEY_TMDB}" >> ./gradle.properties
+          echo "API_KEY_TRAKT=${API_KEY_TRAKT}" >> ./gradle.properties
 
       - uses: actions/cache@v2
         with:
@@ -52,7 +64,7 @@ jobs:
             ~/.gradle/caches/modules-*
             ~/.gradle/caches/jars-*
             ~/.gradle/wrapper/*
-          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
 
       - name: Setup Java
         uses: actions/setup-java@v2
