@@ -4,7 +4,7 @@
    command:
 
 ```bash
-$ ln -s ../../git-hooks/pre-commit.sh .git/hooks/pre-commit
+$ ln -s ../../config/pre-commit.sh .git/hooks/pre-commit
 ```
 
 2. Please adhere to the project structure and conventions
