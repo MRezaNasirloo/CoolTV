@@ -2,7 +2,14 @@ package com.tv.telero.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+object TeleroColor {
+    val Pink900 = Color(0xFF880E4F)
+    val PinkLight = Color(0xFFBC477B)
+    val PinkDark = Color(0xFF560027)
+    val NavyBlue900 = Color(0xFF1E2238)
+    val NavyBlueLight = Color(0xFF464962)
+    val NavyBlueDark = Color(0xFF000013)
+    val Grey900 = Color(0xFF212121)
+    val Red900 = Color(0xFFB71C1C)
+    val RedA700 = Color(0xFFD50000)
+}
