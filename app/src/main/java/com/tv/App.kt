@@ -1,6 +1,7 @@
 package com.tv
 
 import android.app.Application
+import com.cooltv.movie.di.MovieModuleProvider
 import com.tv.core.di.CoreModuleProvider
 import com.tv.core.di.inject
 import com.tv.core.task.StartupTask
@@ -17,7 +18,8 @@ class App : Application() {
         startKoin {
             modules(
                 CoreModuleProvider() +
-                    TrendingModuleProvider()
+                    TrendingModuleProvider() +
+                    MovieModuleProvider()
             )
         }
 

@@ -8,17 +8,26 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.cooltv.movie.MovieScreen
+import com.tv.navigation.movie.entity.Ids
 import com.tv.trending.TrendingScreen
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "Home") {
         composable("Home") {
-            TrendingScreen(it.getViewModel())
+            TrendingScreen(it.getViewModel()) { ids ->
+                navController.navigate("Movie", ids)
+            }
         }
         composable("Profile") { Text("Profile") }
         composable("Setting") { Text("Setting") }
+        composable("Movie") {
+            val ids: Ids = it.requiredArg()
+            MovieScreen(ids, it.getViewModel { parametersOf(ids) })
+        }
     }
 }
 

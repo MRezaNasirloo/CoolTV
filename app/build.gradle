@@ -45,9 +45,11 @@ android {
 
 dependencies {
     implementation project(":common:telero")
+    implementation project(':common:navigation')
     implementation project(":common:core-public")
     implementation project(":common:core-wiring")
     implementation project(":feature:trending")
+    implementation project(":feature:movie")
 
     implementation("androidx.core:core-ktx:$libs.core")
     implementation("androidx.appcompat:appcompat:$libs.compat")
