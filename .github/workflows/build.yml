@@ -40,7 +40,7 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
       - name: run tests
-        run: bash ./gradlew test spotlessCheck
+        run: bash ./gradlew test detekt
 
   apk:
     name: Build APKs
