@@ -1,11 +1,16 @@
 package com.tv
 
+import android.os.Bundle
 import android.os.Parcelable
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.core.net.toUri
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.cooltv.movie.MovieScreen
@@ -41,5 +46,25 @@ internal fun NavController.navigate(route: String, arg: Parcelable) {
 internal inline fun <reified T : Parcelable> NavBackStackEntry.requiredArg(): T {
     return requireNotNull(arguments) { "arguments bundle is null" }.run {
         requireNotNull(getParcelable("cool_tv_arg")) { "argument for ${T::class} is null" }
+    }
+}
+
+internal fun NavController.navigate(
+    route: String,
+    args: Bundle,
+    navOptions: NavOptions? = null,
+) {
+    val routeLink = NavDeepLinkRequest
+        .Builder
+        .fromUri(NavDestination.createRoute(route).toUri())
+        .build()
+
+    val deepLinkMatch = graph.matchDeepLink(routeLink)
+    if (deepLinkMatch != null) {
+        val destination = deepLinkMatch.destination
+        val id = destination.id
+        navigate(id, args, navOptions)
+    } else {
+        navigate(route, navOptions)
     }
 }
