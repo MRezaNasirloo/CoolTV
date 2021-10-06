@@ -8,17 +8,10 @@
 # to skip the tests, run with the --no-verify argument
 # - $ 'git commit --no-verify'
 
-# stash any unstaged changes
-git stash -q --keep-index
-
-# run the task with the gradle wrapper
-./gradlew spotlessCheck
+./gradlew detekt
 
 # store the last exit code in a variable
 RESULT=$?
-
-# unstash the unstashed changes quietly
-git stash pop -q
 
 # return the gradle task exit code
 exit $RESULT

@@ -8,7 +8,7 @@ $ ln -s ../../config/pre-commit.sh .git/hooks/pre-commit
 ```
 
 2. Please adhere to the project structure and conventions
-   * Format code with `./gradlew spotlessApply`
+   * Format code with `./gradlew detekt`
    * Add new features using the _public impl wiring_ module structure
    * Implement unit tests
    * Have fun :)
