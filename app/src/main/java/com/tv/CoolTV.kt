@@ -37,13 +37,15 @@ fun CoolTV() {
 
     CoolTvTheme {
         Surface(color = MaterialTheme.colors.background) {
-            Scaffold(bottomBar = {
-                BottomTabs(
-                    tabs = tabs,
-                    selected = currentEntry?.destination?.route,
-                    click = click
-                )
-            }) {
+            Scaffold(
+                bottomBar = {
+                    BottomTabs(
+                        tabs = tabs,
+                        selected = currentEntry?.destination?.route,
+                        click = click
+                    )
+                }
+            ) {
                 Navigation(navController)
             }
         }

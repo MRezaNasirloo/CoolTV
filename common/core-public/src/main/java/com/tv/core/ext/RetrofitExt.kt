@@ -3,6 +3,7 @@ package com.tv.core.ext
 import retrofit2.HttpException
 import retrofit2.Response
 
+@Suppress("TooGenericExceptionCaught")
 fun <T> Response<T>.toResult(): Result<T> {
     return try {
         if (isSuccessful) {
