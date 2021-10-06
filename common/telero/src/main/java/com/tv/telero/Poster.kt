@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 fun Poster(
     modifier: Modifier = Modifier,
     contentDescription: String? = null,
-    title: String,
+    title: String? = null,
     click: () -> Unit = {},
     painter: @Composable () -> Painter,
 ) {
@@ -49,15 +49,16 @@ fun Poster(
                 contentDescription = contentDescription,
             )
         }
-        Text(
-            modifier = modifier
-                .fillMaxWidth()
-                .heightIn(48.dp)
-                .padding(4.dp),
-            textAlign = TextAlign.Center,
-            text = title,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis
-        )
+        if (!title.isNullOrBlank()) {
+            Text(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .heightIn(48.dp),
+                textAlign = TextAlign.Center,
+                text = title,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
     }
 }
