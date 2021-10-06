@@ -23,6 +23,7 @@ import timber.log.Timber
 class TrendingViewModel constructor(
     private val trendingApi: TrendingApi,
     private val movieApi: MovieApi,
+    private val pageSize: Int = 10,
 ) : ViewModel() {
 
     data class Movie(
@@ -41,7 +42,7 @@ class TrendingViewModel constructor(
         viewModelScope.launch(Dispatchers.IO) {
             flow {
                 emit(
-                    trendingApi.trending(0, 10).map {
+                    trendingApi.trending(0, pageSize).map {
                         Movie(movie = it)
                     }
                 )

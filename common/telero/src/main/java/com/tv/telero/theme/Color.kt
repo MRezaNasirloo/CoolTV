@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package com.tv.telero.theme
 
 import androidx.compose.ui.graphics.Color

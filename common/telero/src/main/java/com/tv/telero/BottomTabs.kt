@@ -18,7 +18,6 @@ fun BottomTabs(
     selected: String?,
     click: (String) -> Unit
 ) {
-
     BottomNavigation(modifier = modifier) {
         tabs.forEach { tab ->
             BottomNavigationItem(
