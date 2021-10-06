@@ -13,19 +13,28 @@ import com.tv.telero.Poster
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun TrendingScreen(viewModel: TrendingViewModel = getViewModel()) {
+fun TrendingScreen(
+    viewModel: TrendingViewModel = getViewModel(),
+    onPosterClick: (Ids) -> Unit
+) {
     val trending = viewModel.trending.collectAsState()
     LazyRow(
         modifier = Modifier,
     ) {
         items(trending.value) { movie ->
-            PosterDetail(Modifier.padding(2.dp), movie)
+            PosterDetail(Modifier.padding(2.dp), movie) {
+                onPosterClick(movie.ids)
+            }
         }
     }
 }
 
 @Composable
-fun PosterDetail(modifier: Modifier = Modifier, movie: TrendingViewModel.Movie) {
+fun PosterDetail(
+    modifier: Modifier = Modifier,
+    movie: TrendingViewModel.Movie,
+    click: () -> Unit
+) {
     val painter = rememberImagePainter(
         data = movie.poster?.posterPath?.let {
             "https://image.tmdb.org/t/p/w500/$it"
@@ -34,7 +43,7 @@ fun PosterDetail(modifier: Modifier = Modifier, movie: TrendingViewModel.Movie) 
             crossfade(true)
         }
     )
-    Poster(modifier = modifier, title = movie.title) {
+    Poster(modifier = modifier, title = movie.title, click = click) {
         painter
     }
 }
