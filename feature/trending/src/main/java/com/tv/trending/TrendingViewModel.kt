@@ -3,7 +3,7 @@ package com.tv.trending
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tv.core.ext.replace
-import com.tv.trending.datasource.Ids
+import com.tv.navigation.movie.entity.Ids
 import com.tv.trending.datasource.MovieApi
 import com.tv.trending.datasource.MovieEntity
 import com.tv.trending.datasource.PosterEntity
