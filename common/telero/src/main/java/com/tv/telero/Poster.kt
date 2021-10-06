@@ -1,6 +1,5 @@
 package com.tv.telero
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,7 +19,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -30,9 +28,9 @@ fun Poster(
     modifier: Modifier = Modifier,
     contentDescription: String? = null,
     title: String,
+    click: () -> Unit = {},
     painter: @Composable () -> Painter,
 ) {
-    val context = LocalContext.current
     Column(
         modifier = modifier
             .width(128.dp)
@@ -42,11 +40,7 @@ fun Poster(
             modifier = modifier
                 .clip(RoundedCornerShape(8.dp))
                 .aspectRatio(2 / 3f)
-                .clickable {
-                    Toast
-                        .makeText(context, "Clicked", Toast.LENGTH_SHORT)
-                        .show()
-                }
+                .clickable(onClick = click)
         ) {
             Image(
                 modifier = Modifier.background(Color.Gray),
