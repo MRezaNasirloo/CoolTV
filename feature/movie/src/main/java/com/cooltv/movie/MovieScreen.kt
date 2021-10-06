@@ -34,7 +34,7 @@ fun MovieScreen(ids: Ids, viewModel: MovieViewModel) {
                 .verticalScroll(rememberScrollState())
                 .padding(8.dp)
         ) {
-            Poster(title = movieState.title) {
+            Poster {
                 rememberImagePainter
             }
             Text(text = movieState.title)
