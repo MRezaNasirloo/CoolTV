@@ -2,6 +2,7 @@ package com.tv.trending.datasource
 
 import android.os.Parcelable
 import com.squareup.moshi.Json
+import com.tv.navigation.movie.entity.Ids
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -20,16 +21,4 @@ data class Movie(
     val ids: Ids,
     @Json(name = "title")
     val title: String
-) : Parcelable
-
-@Parcelize
-data class Ids(
-    @Json(name = "tmdb")
-    val tmdb: Int,
-    @Json(name = "imdb")
-    val imdb: String,
-    @Json(name = "trakt")
-    val trakt: Int,
-    @Json(name = "slug")
-    val slug: String
 ) : Parcelable
