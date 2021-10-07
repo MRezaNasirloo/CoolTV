@@ -269,6 +269,7 @@ formatting:
   active: true
   android: true
   autoCorrect: true
+  excludes: ['**/telero/theme/**']
   AnnotationOnSeparateLine:
     active: true
     autoCorrect: true
