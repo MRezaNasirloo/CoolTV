@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -41,4 +42,7 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
     debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
+
+    compileOnly("com.airbnb.android:showkase:$libs.showkase")
+    kapt("com.airbnb.android:showkase-processor:$libs.showkase")
 }
