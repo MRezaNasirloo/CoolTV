@@ -1,5 +1,6 @@
 package com.tv
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.compose.material.Text
@@ -54,6 +55,7 @@ internal fun NavController.navigate(
     args: Bundle,
     navOptions: NavOptions? = null,
 ) {
+    @SuppressLint("RestrictedApi")
     val routeLink = NavDeepLinkRequest
         .Builder
         .fromUri(NavDestination.createRoute(route).toUri())
