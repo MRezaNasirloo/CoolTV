@@ -7,26 +7,50 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.airbnb.android.showkase.annotation.ShowkaseTypography
 
-@ShowkaseTypography
-val body1 = TextStyle(
-    fontFamily = FontFamily.SansSerif,
-    fontWeight = FontWeight.Light,
-    fontSize = 16.sp
-)
-
 val Typography = Typography(
     defaultFontFamily = FontFamily.SansSerif,
-    body1 = body1
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
-    ),
     caption = TextStyle(
-        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
-)
+        fontSize = 12.sp,
+        letterSpacing = 0.4.sp,
+        color = TeleroColor.Grey500,
+    ))
+
+@ShowkaseTypography
+val h1 = Typography.h1
+
+@ShowkaseTypography
+val h2 = Typography.h2
+
+@ShowkaseTypography
+val h3 = Typography.h3
+
+@ShowkaseTypography
+val h4 = Typography.h4
+
+@ShowkaseTypography
+val h5 = Typography.h5
+
+@ShowkaseTypography
+val h6 = Typography.h6
+
+@ShowkaseTypography
+val subtitle1 = Typography.subtitle1
+
+@ShowkaseTypography
+val subtitle2 = Typography.subtitle2
+
+@ShowkaseTypography
+val body1 = Typography.body1
+
+@ShowkaseTypography
+val body2 = Typography.body2
+
+@ShowkaseTypography
+val button = Typography.button
+
+@ShowkaseTypography
+val caption = Typography.caption
+
+@ShowkaseTypography
+val overline = Typography.overline

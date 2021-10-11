@@ -21,6 +21,12 @@ object TeleroColor {
     @ShowkaseColor
     val Grey900 = Color(0xFF212121)
     @ShowkaseColor
+    val Grey300 = Color(0XFFE0E0E0)
+    @ShowkaseColor
+    val Grey400 = Color(0XFFBDBDBD)
+    @ShowkaseColor
+    val Grey500 = Color(0XFF9E9E9E)
+    @ShowkaseColor
     val Red900 = Color(0xFFB71C1C)
     @ShowkaseColor
     val RedA700 = Color(0xFFD50000)
