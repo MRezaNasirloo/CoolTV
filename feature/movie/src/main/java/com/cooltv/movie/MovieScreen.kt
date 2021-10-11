@@ -1,21 +1,21 @@
 package com.cooltv.movie
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.tv.navigation.movie.entity.Ids
 import com.tv.telero.Backdrop
+import com.tv.telero.MovieTitle
 import com.tv.telero.Poster
 import com.tv.telero.util.LogCompositions
 
 @Composable
+@Suppress("MagicNumber")
 fun MovieScreen(ids: Ids, viewModel: MovieViewModel) {
     LogCompositions("MovieScreen")
     val movieState = viewModel.movie.collectAsState().value
@@ -31,9 +31,7 @@ fun MovieScreen(ids: Ids, viewModel: MovieViewModel) {
             }
         )
         Column(
-            Modifier
-                .verticalScroll(rememberScrollState())
-                .padding(8.dp)
+            Modifier.verticalScroll(rememberScrollState())
         ) {
             Backdrop {
                 rememberImagePainter(
@@ -48,10 +46,14 @@ fun MovieScreen(ids: Ids, viewModel: MovieViewModel) {
             Poster {
                 rememberImagePainter
             }
-            Text(text = movieState.title)
+            MovieTitle(
+                title = movieState.title,
+                year = movieState.releaseDate?.substring(0, 4)?.toInt(),
+                certification = null,
+                runtime = movieState.runtime
+            )
             Text(text = movieState.status)
             Text(text = movieState.overview ?: "")
-            Text(text = movieState.releaseDate ?: "")
             Text(text = movieState.voteAverage.toString())
             Text(text = movieState.voteCount.toString())
             Text(text = movieState.popularity.toString())
