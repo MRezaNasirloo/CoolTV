@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.tv.navigation.movie.entity.Ids
+import com.tv.telero.Backdrop
 import com.tv.telero.Poster
 import com.tv.telero.util.LogCompositions
 
@@ -34,6 +35,16 @@ fun MovieScreen(ids: Ids, viewModel: MovieViewModel) {
                 .verticalScroll(rememberScrollState())
                 .padding(8.dp)
         ) {
+            Backdrop {
+                rememberImagePainter(
+                    data = movieState.backdropPath?.let {
+                        "https://image.tmdb.org/t/p/w500/$it"
+                    },
+                    builder = {
+                        crossfade(true)
+                    }
+                )
+            }
             Poster {
                 rememberImagePainter
             }
