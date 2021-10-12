@@ -1,9 +1,7 @@
-package com.telero
+package com.tv.telero
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.tv.telero.Chip
-import com.tv.telero.ChipGroup
 import com.tv.telero.theme.CoolTvTheme
 
 @Composable
