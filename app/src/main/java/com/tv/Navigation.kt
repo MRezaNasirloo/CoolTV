@@ -32,7 +32,7 @@ fun Navigation(navController: NavHostController) {
         composable("Setting") { Text("Setting") }
         composable("Movie") {
             val ids: Ids = it.requiredArg()
-            MovieScreen(ids, it.getViewModel { parametersOf(ids) })
+            MovieScreen(it.getViewModel { parametersOf(ids) })
         }
     }
 }
