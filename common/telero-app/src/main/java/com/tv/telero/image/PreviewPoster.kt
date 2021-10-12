@@ -1,10 +1,7 @@
-package com.telero
+package com.tv.telero.image
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -15,20 +12,9 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
-import com.airbnb.android.showkase.annotation.ShowkaseRoot
-import com.airbnb.android.showkase.annotation.ShowkaseRootModule
-import com.airbnb.android.showkase.models.Showkase
-import com.tv.telero.BottomTabs
 import com.tv.telero.Poster
-import com.tv.telero.Tab
+import com.tv.telero.app.R
 import com.tv.telero.theme.CoolTvTheme
-
-class TeleroActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        startActivity(Showkase.getBrowserIntent(this))
-    }
-}
 
 data class PosterEntity(
     val title: String = "",
@@ -82,7 +68,7 @@ private fun PosterList(posters: List<PosterEntity>) {
             modifier = Modifier
                 .padding(4.dp),
         ) {
-            items(posters) {
+            this.items(posters) {
                 Poster(Modifier.padding(4.dp), title = it.title) {
                     painterResource(it.poster)
                 }
@@ -112,19 +98,3 @@ fun Poster2() {
         }
     }
 }
-
-@Preview
-@Composable
-fun PreviewBottomTabs() {
-    val tabs = listOf(
-        Tab(title = "Home", icon = com.tv.telero.R.drawable.ic_home_24),
-        Tab(title = "Profile", icon = com.tv.telero.R.drawable.ic_person_24),
-        Tab(title = "Setting", icon = com.tv.telero.R.drawable.ic_settings_24),
-    )
-    CoolTvTheme {
-        BottomTabs(modifier = Modifier.requiredHeight(56.dp), tabs, "") {}
-    }
-}
-
-@ShowkaseRoot
-class MyRootModule : ShowkaseRootModule

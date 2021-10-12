@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.telero">
+    package="com.tv.telero.app">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoolTV">
         <activity
-            android:name=".TeleroActivity"
+            android:name="com.tv.telero.TeleroActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.CoolTV.NoActionBar">

@@ -1,8 +1,7 @@
-package com.telero
+package com.tv.telero
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.tv.telero.TextBox
 
 @Preview
 @Composable
