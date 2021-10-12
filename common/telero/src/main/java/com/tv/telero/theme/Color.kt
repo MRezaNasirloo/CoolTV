@@ -6,28 +6,40 @@ import androidx.compose.ui.graphics.Color
 import com.airbnb.android.showkase.annotation.ShowkaseColor
 
 object TeleroColor {
-    @ShowkaseColor
+    @ShowkaseColor(group = "Pink")
     val Pink900 = Color(0xFF880E4F)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Pink")
     val PinkLight = Color(0xFFBC477B)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Pink")
     val PinkDark = Color(0xFF560027)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Navy Blue")
     val NavyBlue900 = Color(0xFF1E2238)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Navy Blue")
     val NavyBlueLight = Color(0xFF464962)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Navy Blue")
     val NavyBlueDark = Color(0xFF000013)
-    @ShowkaseColor
-    val Grey900 = Color(0xFF212121)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Grey")
+    val Grey50 = Color(0XFFFAFAFA)
+    @ShowkaseColor(group = "Grey")
+    val Grey100 = Color(0XFFF5F5F5)
+    @ShowkaseColor(group = "Grey")
+    val Grey200 = Color(0XFFEEEEEE)
+    @ShowkaseColor(group = "Grey")
     val Grey300 = Color(0XFFE0E0E0)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Grey")
     val Grey400 = Color(0XFFBDBDBD)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Grey")
     val Grey500 = Color(0XFF9E9E9E)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Grey")
+    val Grey600 = Color(0XFF757575)
+    @ShowkaseColor(group = "Grey")
+    val Grey700 = Color(0XFF616161)
+    @ShowkaseColor(group = "Grey")
+    val Grey800 = Color(0XFF424242)
+    @ShowkaseColor(group = "Grey")
+    val Grey900 = Color(0xFF212121)
+    @ShowkaseColor(group = "Red")
     val Red900 = Color(0xFFB71C1C)
-    @ShowkaseColor
+    @ShowkaseColor(group = "Red")
     val RedA700 = Color(0xFFD50000)
 }
