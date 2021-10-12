@@ -11,9 +11,9 @@ val Typography = Typography(
     defaultFontFamily = FontFamily.SansSerif,
     caption = TextStyle(
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,
+        fontSize = 13.sp,
         letterSpacing = 0.4.sp,
-        color = TeleroColor.Grey500,
+        color = TeleroColor.Grey600,
     ))
 
 @ShowkaseTypography
