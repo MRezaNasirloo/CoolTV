@@ -37,14 +37,14 @@ fun MovieTitle(title: String, year: Int?, certification: String?, runtime: Int?)
                         maxLines = 1,
                     )
                 }
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 if (certification != null) {
                     TextBox(
                         text = certification,
                         maxLines = 1,
                     )
                 }
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 if (runtime != null) {
                     TextBox(
                         text = runtime.pretty(),
