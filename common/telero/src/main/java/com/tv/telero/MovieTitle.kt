@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.tv.telero.text.TextBox
 
 @Composable
-fun MovieTitle(title: String, year: Int?, certification: String?, runtime: Int?) {
+fun MovieTitle(title: String, tags: List<String>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -30,39 +30,17 @@ fun MovieTitle(title: String, year: Int?, certification: String?, runtime: Int?)
             overflow = TextOverflow.Ellipsis,
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Row {
-            ProvideTextStyle(value = MaterialTheme.typography.caption) {
-                if (year != null) {
+
+        ProvideTextStyle(value = MaterialTheme.typography.caption) {
+            Row {
+                tags.forEach { tag ->
                     TextBox(
-                        text = year.toString(),
+                        text = tag,
                         maxLines = 1,
                     )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                if (certification != null) {
-                    TextBox(
-                        text = certification,
-                        maxLines = 1,
-                    )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                if (runtime != null) {
-                    TextBox(
-                        text = runtime.pretty(),
-                        maxLines = 1,
-                    )
+                    Spacer(modifier = Modifier.width(16.dp))
                 }
             }
         }
     }
-}
-
-/**
- * Converts raw minutes value to human readable time
- * e.g : 138 -> 2h 18min
- */
-private fun Int.pretty(): String {
-    val hours = this / 60
-    val minutes = this % 60
-    return "${hours}h ${minutes}min"
 }

@@ -10,9 +10,12 @@ fun PreviewMovieTitle() {
     CoolTvTheme {
         MovieTitle(
             title = "Ford v Ferrari",
-            year = 2012,
-            certification = "PG-13",
-            118
+            listOf(
+                "2012",
+                "PG-13",
+                "1h 23min",
+                "Released",
+            ),
         )
     }
 }
