@@ -1,4 +1,4 @@
-package com.tv.telero
+package com.tv.telero.image
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

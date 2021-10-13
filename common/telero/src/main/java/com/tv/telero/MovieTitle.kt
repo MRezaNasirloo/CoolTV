@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.tv.telero.text.TextBox
 
 @Composable
 fun MovieTitle(title: String, year: Int?, certification: String?, runtime: Int?) {

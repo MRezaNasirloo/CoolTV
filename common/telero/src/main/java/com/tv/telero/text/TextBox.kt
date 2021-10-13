@@ -1,4 +1,4 @@
-package com.tv.telero
+package com.tv.telero.text
 
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.Text

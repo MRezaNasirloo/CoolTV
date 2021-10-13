@@ -1,4 +1,4 @@
-package com.tv.telero
+package com.tv.telero.image
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource

@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.tv.telero.text.TextBox
 import com.tv.telero.theme.TeleroColor
 
 @Composable
@@ -35,9 +36,9 @@ fun Chip(text: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ChipGroup(chips: List<String>) {
+fun ChipGroup(modifier: Modifier = Modifier, chips: List<String>) {
     Layout(
-        modifier = Modifier.padding(horizontal = 12.dp),
+        modifier = Modifier.padding(horizontal = 12.dp).then(modifier),
         content = {
             chips.forEach {
                 Chip(text = it, Modifier.padding(4.dp))
