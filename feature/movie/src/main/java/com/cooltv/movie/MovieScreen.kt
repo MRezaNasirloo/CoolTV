@@ -15,7 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.tv.telero.Backdrop
+import com.tv.telero.image.Backdrop
 import com.tv.telero.ChipGroup
 import com.tv.telero.MovieTitle
 import com.tv.telero.util.LogCompositions

@@ -12,7 +12,6 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
-import com.tv.telero.Poster
 import com.tv.telero.app.R
 import com.tv.telero.theme.CoolTvTheme
 

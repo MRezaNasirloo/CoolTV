@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.tv.navigation.movie.entity.Ids
-import com.tv.telero.Poster
+import com.tv.telero.image.Poster
 import org.koin.androidx.compose.getViewModel
 
 @Composable
