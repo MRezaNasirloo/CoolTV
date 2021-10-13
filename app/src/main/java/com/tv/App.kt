@@ -6,6 +6,7 @@ import com.tv.core.di.CoreModuleProvider
 import com.tv.core.di.inject
 import com.tv.core.task.StartupTask
 import com.tv.trending.di.TrendingModuleProvider
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class App : Application() {
@@ -16,6 +17,7 @@ class App : Application() {
         super.onCreate()
 
         startKoin {
+            androidContext(applicationContext)
             modules(
                 CoreModuleProvider() +
                     TrendingModuleProvider() +
