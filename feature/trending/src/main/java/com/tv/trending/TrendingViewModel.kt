@@ -53,6 +53,7 @@ class TrendingViewModel constructor(
                         acc.replace(movie, movie.copy(poster = poster))
                     }
             }.catch {
+                // use com.tv.core.ext.Result
                 Timber.e(Throwable("flow crashed"))
             }.collect {
                 _trending.emit(it)
