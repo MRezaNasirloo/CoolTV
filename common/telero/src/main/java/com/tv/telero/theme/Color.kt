@@ -42,4 +42,6 @@ object TeleroColor {
     val Red900 = Color(0xFFB71C1C)
     @ShowkaseColor(group = "Red")
     val RedA700 = Color(0xFFD50000)
+    @ShowkaseColor(group = "Amber")
+    val AmberA400 = Color(0XFFFFC400)
 }
