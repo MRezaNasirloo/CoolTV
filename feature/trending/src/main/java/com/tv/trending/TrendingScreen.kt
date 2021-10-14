@@ -1,5 +1,6 @@
 package com.tv.trending
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -9,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.tv.navigation.movie.entity.Ids
+import com.tv.telero.CircularLoading
 import com.tv.telero.image.Poster
 import org.koin.androidx.compose.getViewModel
 
@@ -17,13 +19,19 @@ fun TrendingScreen(
     viewModel: TrendingViewModel = getViewModel(),
     onPosterClick: (Ids) -> Unit
 ) {
-    val trending = viewModel.trending.collectAsState()
-    LazyRow(
-        modifier = Modifier,
-    ) {
-        items(trending.value) { movie ->
-            PosterDetail(Modifier.padding(2.dp), movie) {
-                onPosterClick(movie.ids)
+    val state = viewModel.trending.collectAsState()
+    Crossfade(targetState = state.value.isEmpty()) { isLoading ->
+        if (isLoading) {
+            CircularLoading()
+        } else {
+            LazyRow(
+                modifier = Modifier,
+            ) {
+                items(state.value) { movie ->
+                    PosterDetail(Modifier.padding(2.dp), movie) {
+                        onPosterClick(movie.ids)
+                    }
+                }
             }
         }
     }
