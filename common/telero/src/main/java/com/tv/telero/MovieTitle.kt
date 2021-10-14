@@ -21,12 +21,12 @@ fun MovieTitle(title: String, tags: List<String>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(vertical = 8.dp, horizontal = 16.dp)
     ) {
         TextBox(
             text = title,
             style = MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Medium),
-            maxLines = 1,
+            maxLines = 3,
             overflow = TextOverflow.Ellipsis,
         )
         Spacer(modifier = Modifier.height(8.dp))
