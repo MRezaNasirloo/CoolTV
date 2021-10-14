@@ -4,17 +4,13 @@ import android.widget.Toast
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -25,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.cooltv.movie.datasource.MovieEntity
 import com.tv.telero.ChipGroup
+import com.tv.telero.CircularLoading
 import com.tv.telero.MovieTitle
 import com.tv.telero.image.Backdrop
 import com.tv.telero.image.Poster
@@ -37,12 +34,7 @@ import com.tv.telero.text.Title
 fun MovieScreen(viewModel: MovieViewModel) {
     Crossfade(targetState = viewModel.movie.collectAsState().value) { movie ->
         if (movie == null) {
-            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator(
-                    strokeWidth = 1.dp,
-                    color = MaterialTheme.colors.onSurface
-                )
-            }
+            CircularLoading()
         } else {
             Column(
                 Modifier.verticalScroll(rememberScrollState())
