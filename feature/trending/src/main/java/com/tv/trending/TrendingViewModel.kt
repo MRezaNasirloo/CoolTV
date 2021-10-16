@@ -1,5 +1,6 @@
 package com.tv.trending
 
+import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tv.core.ext.replace
@@ -26,6 +27,7 @@ class TrendingViewModel constructor(
     private val pageSize: Int = 10,
 ) : ViewModel() {
 
+    @Stable
     data class Movie(
         private val movie: MovieEntity,
         val poster: PosterEntity? = null
