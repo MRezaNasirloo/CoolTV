@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
@@ -19,15 +20,15 @@ fun TrendingScreen(
     viewModel: TrendingViewModel = getViewModel(),
     onPosterClick: (Ids) -> Unit
 ) {
-    val state = viewModel.trending.collectAsState()
-    Crossfade(targetState = state.value.isEmpty()) { isLoading ->
+    val state by viewModel.trending.collectAsState()
+    Crossfade(targetState = state.isEmpty()) { isLoading ->
         if (isLoading) {
             CircularLoading()
         } else {
             LazyRow(
                 modifier = Modifier,
             ) {
-                items(state.value) { movie ->
+                items(state) { movie ->
                     PosterDetail(Modifier.padding(2.dp), movie) {
                         onPosterClick(movie.ids)
                     }
