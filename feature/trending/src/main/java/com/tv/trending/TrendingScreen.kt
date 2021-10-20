@@ -45,12 +45,7 @@ fun PosterDetail(
     click: () -> Unit
 ) {
     val painter = rememberImagePainter(
-        data = movie.poster?.posterPath?.let {
-            "https://image.tmdb.org/t/p/w500/$it"
-        },
-        builder = {
-            crossfade(true)
-        }
+        data = movie.poster?.posterPath,
     )
     Poster(modifier = modifier, title = movie.title, click = click) {
         painter

@@ -41,12 +41,7 @@ fun MovieScreen(viewModel: MovieViewModel) {
             ) {
                 Backdrop {
                     rememberImagePainter(
-                        data = movie.backdropPath?.let {
-                            "https://image.tmdb.org/t/p/w500/$it"
-                        },
-                        builder = {
-                            crossfade(true)
-                        }
+                        data = movie.backdropPath,
                     )
                 }
                 Header(movie)
@@ -70,9 +65,7 @@ private fun Header(movie: MovieEntity) {
     ) {
         Poster {
             rememberImagePainter(
-                data = movie.posterPath?.let {
-                    "https://image.tmdb.org/t/p/w500/$it"
-                },
+                data = movie.posterPath,
                 builder = {
                     crossfade(true)
                 }
