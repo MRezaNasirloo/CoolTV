@@ -12,7 +12,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrl
 class TmdbImageMapper : Mapper<String, HttpUrl> {
 
     override fun handles(data: String): Boolean {
-        return data.length == ID_LENGTH && data.startsWith('/') && data.endsWith(".jpg")
+        return data.startsWith('/') && data.endsWith(".jpg")
     }
 
     override fun map(data: String): HttpUrl {
@@ -21,6 +21,5 @@ class TmdbImageMapper : Mapper<String, HttpUrl> {
 
     private companion object {
         private const val TMDB_IMAGES_BASE_URL = "https://image.tmdb.org/t/p/w500"
-        private const val ID_LENGTH = 32
     }
 }
