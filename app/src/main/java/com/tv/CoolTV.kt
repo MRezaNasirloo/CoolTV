@@ -1,5 +1,6 @@
 package com.tv
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
@@ -14,6 +15,7 @@ import com.tv.telero.Tab
 import com.tv.telero.theme.CoolTvTheme
 
 @Composable
+@ExperimentalAnimationApi
 fun CoolTV() {
     val navController = rememberNavController()
 

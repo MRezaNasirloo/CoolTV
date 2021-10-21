@@ -3,6 +3,7 @@ package com.tv
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Parcelable
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.core.net.toUri
@@ -21,6 +22,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
 @Composable
+@ExperimentalAnimationApi
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "Home") {
         composable("Home") {

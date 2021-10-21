@@ -1,7 +1,11 @@
 package com.cooltv.movie
 
 import android.widget.Toast
-import androidx.compose.animation.Crossfade
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -31,13 +36,26 @@ import com.tv.telero.text.Description
 import com.tv.telero.text.Title
 
 @Composable
+@ExperimentalAnimationApi
 fun MovieScreen(viewModel: MovieViewModel) {
-    Crossfade(targetState = viewModel.movie.collectAsState().value) { movie ->
+    val state by viewModel.movie.collectAsState()
+    AnimatedContent(
+        targetState = state,
+    ) { movie ->
         if (movie == null) {
             CircularLoading()
         } else {
             Column(
-                Modifier.verticalScroll(rememberScrollState())
+                Modifier
+                    .verticalScroll(rememberScrollState())
+                    .animateEnterExit(
+                        enter = slideInVertically(
+                            initialOffsetY = { it / SLIDE_OFFSET_MULTIPLAYER },
+                            animationSpec = tween()
+                        ) + fadeIn(
+                            animationSpec = tween()
+                        )
+                    )
             ) {
                 Backdrop {
                     rememberImagePainter(
@@ -116,3 +134,5 @@ private fun Int.pretty(): String {
     val minutes = this % 60
     return "${hours}h ${minutes}min".removeSuffix("0min")
 }
+
+private const val SLIDE_OFFSET_MULTIPLAYER = 20
