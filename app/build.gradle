@@ -62,4 +62,6 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
     debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
+
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
 }
