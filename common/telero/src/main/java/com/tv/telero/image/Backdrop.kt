@@ -10,11 +10,12 @@ import androidx.compose.ui.layout.ContentScale
 import com.tv.telero.theme.TeleroColor
 
 @Composable
-fun Backdrop(painter: @Composable () -> Painter) {
+fun Backdrop(modifier: Modifier = Modifier, painter: @Composable () -> Painter) {
     Image(
         modifier = Modifier
             .aspectRatio(16 / 9f)
-            .background(color = TeleroColor.Grey900),
+            .background(color = TeleroColor.Grey900)
+            .then(modifier),
         painter = painter(),
         contentScale = ContentScale.Crop,
         contentDescription = null
