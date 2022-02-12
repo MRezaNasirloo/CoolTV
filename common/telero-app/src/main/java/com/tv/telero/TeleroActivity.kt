@@ -10,6 +10,7 @@ class TeleroActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startActivity(Showkase.getBrowserIntent(this))
+        finish()
     }
 }
 

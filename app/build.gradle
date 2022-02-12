@@ -60,6 +60,8 @@ dependencies {
     implementation("androidx.compose.material:material:$libs.compose")
     implementation("androidx.activity:activity-compose:$libs.compat")
 
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.23.0")
+
     debugImplementation("androidx.compose.ui:ui-tooling:$libs.compose")
     debugImplementation("androidx.compose.ui:ui-tooling-preview:$libs.compose")
 }

@@ -17,9 +17,13 @@ import androidx.navigation.compose.composable
 import com.cooltv.movie.MovieScreen
 import com.tv.navigation.movie.entity.Ids
 import com.tv.trending.TrendingScreen
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "Home") {

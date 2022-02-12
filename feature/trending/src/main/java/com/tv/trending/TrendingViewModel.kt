@@ -10,6 +10,8 @@ import com.tv.trending.datasource.MovieEntity
 import com.tv.trending.datasource.PosterEntity
 import com.tv.trending.datasource.TrendingApi
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
@@ -21,6 +23,8 @@ import kotlinx.coroutines.flow.scan
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
+@ExperimentalCoroutinesApi
+@FlowPreview
 class TrendingViewModel constructor(
     private val trendingApi: TrendingApi,
     private val movieApi: MovieApi,

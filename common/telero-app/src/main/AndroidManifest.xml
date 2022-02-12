@@ -11,9 +11,7 @@
         android:theme="@style/Theme.CoolTV">
         <activity
             android:name="com.tv.telero.TeleroActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.CoolTV.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,7 +8,7 @@ ext {
     libs = [
             'core'            : '1.7.0',
             'compat'          : '1.4.0',
-            'compose'         : '1.1.0-rc03',
+            'compose'         : '1.1.0',
             'material'        : '1.5.0',
             'lifecycle'       : '2.3.1',
             'navigation'      : '2.4.0',

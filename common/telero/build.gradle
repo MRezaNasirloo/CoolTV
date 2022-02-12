@@ -36,7 +36,6 @@ dependencies {
     implementation("androidx.compose.material:material:$libs.compose")
 
     implementation("androidx.appcompat:appcompat:$libs.compat")
-    implementation("com.google.android.material:material:$libs.material")
 
     implementation("com.jakewharton.timber:timber:$libs.timber")
 

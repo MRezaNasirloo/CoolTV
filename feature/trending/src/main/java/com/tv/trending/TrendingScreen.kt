@@ -13,8 +13,12 @@ import coil.compose.rememberImagePainter
 import com.tv.navigation.movie.entity.Ids
 import com.tv.telero.CircularLoading
 import com.tv.telero.image.Poster
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.compose.getViewModel
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 @Composable
 fun TrendingScreen(
     viewModel: TrendingViewModel = getViewModel(),
@@ -38,6 +42,8 @@ fun TrendingScreen(
     }
 }
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 @Composable
 fun PosterDetail(
     modifier: Modifier = Modifier,
