@@ -12,7 +12,7 @@ on:
 jobs:
   test:
     name: Unit Tests
-    runs-on: ubuntu-latest
+    runs-on: buildjet-8vcpu-ubuntu-2004
     env:
       API_KEY_TMDB: ${{ secrets.API_KEY_TMDB }}
       API_KEY_TRAKT: ${{ secrets.API_KEY_TRAKT }}
@@ -44,7 +44,7 @@ jobs:
 
   apk:
     name: Build APKs
-    runs-on: ubuntu-latest
+    runs-on: buildjet-8vcpu-ubuntu-2004
     env:
       API_KEY_TMDB: ${{ secrets.API_KEY_TMDB }}
       API_KEY_TRAKT: ${{ secrets.API_KEY_TRAKT }}
